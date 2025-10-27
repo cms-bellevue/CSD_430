@@ -1,0 +1,70 @@
+/*
+Clint Scott
+CSD 430
+M1 – JSP Setup: A Journey in Configuration
+10/26/2025
+
+This external stylesheet provides clean, consistent styling for the JSP Setup
+verification page. It defines the layout for the main container, sets the
+typography, and styles the custom "confession box" to ensure a professional and
+readable user interface.
+*/
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+strong {
+    font-weight: 700;
+}
+
+.container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.confession-box {
+    margin-top: 30px;
+    padding: 20px;
+    border: 1px solid #d9534f;
+    background-color: #fefafa;
+    border-radius: 5px;
+}
+
+.confession-box p {
+    margin-bottom: 1.5em;
+}
+
+.confession-box b {
+    color: #a04040;
+    font-weight: 700;
+}
+
+ol {
+    margin-left: 20px;
+    margin-bottom: 1.5em;
+}
+
+h2 {
+    color: #0056b3;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 10px;
+}
+
+h3 {
+    color: #d9534f;
+    margin-top: 0;
+}
+
+.status-message {
+    margin-top: 30px;
+}
