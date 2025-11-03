@@ -1,0 +1,224 @@
+/* Clint Scott
+CSD 430
+M3 – Working with JSP Forms
+11/02/2025
+
+This stylesheet styles the Character Creation form and Character Summary table
+for the Fallen Night MUD. It features a modern dark theme with consistent fonts,
+colors, and spacing, ensuring that forms and tables are centered, readable, and
+visually appealing.
+*/
+
+/* ------------------------------
+   Global Body Styling
+   ------------------------------ */
+body {
+    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #0d1117; 
+    color: #c9d1d9;
+    margin: 0;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+/* ------------------------------
+   Main Content Container
+   ------------------------------ */
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding-bottom: 50px;
+}
+
+/* ------------------------------
+   Header Styling
+   ------------------------------ */
+h1 {
+    text-align: center;
+    color: #58a6ff;
+    font-size: 2.2em;
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+
+/* ------------------------------
+   Paragraph Styling
+   ------------------------------ */
+.container p {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+/* ------------------------------
+   Form Layout and Appearance
+   ------------------------------ */
+form {
+    max-width: 100%;
+    margin: 0;
+    background-color: #161b22;
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+    border: 1px solid #30363d;
+}
+
+fieldset {
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    padding: 20px;
+    transition: box-shadow 0.3s ease;
+}
+
+fieldset:hover {
+    box-shadow: 0 0 15px rgba(88, 166, 255, 0.2);
+}
+
+legend {
+    font-weight: 700;
+    color: #58a6ff;
+    padding: 0 10px;
+    font-size: 1.1em;
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select,
+textarea { 
+    width: 100%;
+    padding: 12px 15px;
+    border-radius: 8px;
+    border: 1px solid #444c56;
+    background-color: #0d1117;
+    color: #c9d1d9;
+    font-size: 1em;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.5);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+select:focus,
+textarea:focus {
+    border-color: #58a6ff; 
+    box-shadow: 0 0 0 1px #58a6ff;
+    outline: none;
+}
+
+input[type="checkbox"] {
+    margin-right: 8px;
+}
+
+/* ------------------------------
+   Button Styling
+   ------------------------------ */
+input[type="submit"],
+input[type="reset"] {
+    display: inline-block;
+    padding: 12px 20px;
+    font-size: 1em;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 20px;
+}
+
+input[type="submit"] {
+    width: 48%; 
+    background-color: #58a6ff; 
+    color: #0d1117;
+    float: right; 
+}
+
+input[type="reset"] {
+    width: 48%;
+    background-color: #30363d; 
+    color: #c9d1d9;
+    margin-right: 4%; 
+}
+
+input[type="submit"]:hover {
+    background-color: #448aff; 
+}
+
+input[type="reset"]:hover {
+    background-color: #444c56;
+}
+
+/* Fix for incomplete selector in original file */
+input[type="submit"]:active,
+input[type="reset"]:active {
+    transform: translateY(1px);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #161b22;
+    border-radius: 8px;
+    overflow: hidden; 
+    border: 1px solid #30363d;
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #30363d;
+}
+
+th {
+    background-color: #1f242c;
+    color: #58a6ff;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+tr:nth-child(even) {
+    background-color: #161b22;
+}
+
+tr:hover {
+    background-color: #21262d;
+}
+
+.return-link {
+    display: inline-block;
+    margin-top: 25px;
+    color: #58a6ff;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 5px 0;
+    transition: color 0.3s ease;
+}
+
+.return-link:hover {
+    color: #8bb8ff;
+    text-decoration: underline;
+}
+
+footer {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 0.9em;
+    color: #6e7681;
+}
