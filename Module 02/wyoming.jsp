@@ -1,4 +1,4 @@
-<%--
+<%-- 
 Clint Scott
 CSD 430
 M2 – Dynamic JSP Scriptlet Example (Wyoming Memories)
@@ -10,6 +10,7 @@ The table data is created in Java and rendered as HTML, with each record includi
 a place, activity, and short description. External CSS is used to apply a clean,
 modern layout similar to the previous JSP setup demonstration page.
 --%>
+
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -29,11 +30,13 @@ modern layout similar to the previous JSP setup demonstration page.
         </p>
 
         <%
+            // Define a simple inner class to hold structured memory data
             class Memory {
                 String place;
                 String activity;
                 String description;
 
+                // Constructor used to initialize each memory record
                 Memory(String place, String activity, String description) {
                     this.place = place;
                     this.activity = activity;
@@ -41,6 +44,7 @@ modern layout similar to the previous JSP setup demonstration page.
                 }
             }
 
+            // Create an array of Memory objects with sample data
             Memory[] memories = {
                 new Memory("Green River", "Home", "Where we lived and made lifelong memories."),
                 new Memory("Rock Springs", "Shopping", "Visited stores and local shops on weekends."),
@@ -61,15 +65,18 @@ modern layout similar to the previous JSP setup demonstration page.
             </thead>
             <tbody>
                 <%
+                    // Loop through each Memory object and print its data into a new table row
                     for (Memory m : memories) {
                 %>
                 <tr>
+                    <!-- Each table cell outputs a field value from the current Memory object -->
                     <td><%= m.place %></td>
                     <td><%= m.activity %></td>
                     <td><%= m.description %></td>
                 </tr>
                 <%
                     }
+                    // End of loop that generates table rows dynamically
                 %>
             </tbody>
         </table>
