@@ -1,4 +1,4 @@
-/* Reset and base styles (shared) */
+/* Reset and base styles */
 * {
     margin: 0;
     padding: 0;
@@ -14,7 +14,7 @@ body {
     text-align: center;
 }
 
-/* Header styling (shared) */
+/* Header styling */
 h2 {
     background-color: #4a90e2;
     color: white;

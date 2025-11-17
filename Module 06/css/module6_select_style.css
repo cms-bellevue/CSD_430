@@ -1,4 +1,4 @@
-/* Reset and base styles (shared) */
+/* Reset and base styles */
 * {
     margin: 0;
     padding: 0;
@@ -14,7 +14,7 @@ body {
     text-align: center;
 }
 
-/* Header styling (shared) */
+/* Header styling */
 h2 {
     background-color: #4a90e2;
     color: white;
@@ -34,7 +34,7 @@ h2 {
     font-weight: bold;
 }
 
-/* Styles for the record selection form container - FIX APPLIED */
+/* Styles for the record selection form container */
 .select-form-container {
     max-width: 500px;
     margin: 0 auto 20px auto;
@@ -43,9 +43,7 @@ h2 {
     border-radius: 5px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.1);
     text-align: left;
-    /* FIX: Set general border to none/transparent first... */
     border: none;
-    /* ...then apply only the desired top border */
     border-top: 5px solid #4a90e2;
 }
 
@@ -89,14 +87,13 @@ h2 {
     background-color: #1a5bb8;
 }
 
-/* Box styling for Module 6 record details (detail-box) - UNIFORM BORDER REMAINS */
+/* Box styling for Module 6 record details */
 .detail-box {
     max-width: 500px;
     margin: 20px auto;
     padding: 20px;
     background-color: #f9f9ff;
     border-radius: 8px;
-    /* This box retains its uniform 1px blue border on all sides */
     border: 1px solid #4a90e2;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     text-align: left;
