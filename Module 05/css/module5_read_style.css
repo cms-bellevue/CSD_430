@@ -1,0 +1,130 @@
+/* Reset and base styles (shared) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.5;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Header styling (shared) */
+h2 {
+    background-color: #4a90e2;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+    display: inline-block;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/* Error message styling */
+.error-message {
+    color: red; 
+    text-align: center; 
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+/* Compact table styling for displaying all records */
+.compact-table {
+    border-collapse: collapse;
+    width: 600px;
+    max-width: 95%;
+    margin: 0 auto 20px auto;
+    background-color: white;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.1);
+    font-size: 0.9em;
+}
+
+.compact-table thead {
+    background-color: #4a90e2;
+    color: white;
+    text-align: left;
+}
+
+.compact-table th,
+.compact-table td {
+    padding: 8px 12px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+}
+
+/* Only body rows change background on hover */
+.compact-table tbody tr:hover {
+    background-color: #f1f7ff;
+}
+
+/* Table header visual cue for sorting */
+.compact-table th {
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.compact-table th:hover {
+    background-color: #3a78c2;
+}
+
+/* Sort hint text above table */
+.sort-hint {
+    text-align: center;
+    font-size: 0.9em;
+    color: #555;
+    margin-bottom: 8px;
+}
+
+/* Return link styling */
+.return-container {
+    text-align: center;
+}
+
+.return-link {
+    display: inline-block;
+    padding: 6px 12px;
+    background-color: #4a90e2;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background-color 0.2s;
+}
+
+.return-link:hover {
+    background-color: #1a5bb8;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    h2 {
+        font-size: 1.3em;
+        padding: 8px 12px;
+    }
+
+    .compact-table {
+        width: 100%;
+        font-size: 0.85em;
+    }
+    
+    .compact-table th,
+    .compact-table td {
+        padding: 6px 8px;
+    }
+
+    .return-link {
+        padding: 5px 10px;
+    }
+}
