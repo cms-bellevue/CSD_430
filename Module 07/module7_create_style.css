@@ -1,0 +1,203 @@
+/* Clint Scott
+CSD 430
+Module 7 Project Part 2
+11/23/2025
+
+Styles for module7_create.jsp.
+*/
+
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.5;
+    padding: 20px;
+    text-align: center;
+}
+
+h2 {
+    background-color: #4a90e2;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+    display: inline-block;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+h3 {
+    color: #4a90e2;
+    margin: 20px 0 10px 0;
+}
+
+/* Form Styles */
+.form-container {
+    background-color: white;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: left;
+    border-top: 5px solid #4a90e2;
+}
+
+.form-container h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+/* Standard Inputs */
+.form-group input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+/* Custom Genre Input - Hidden by default */
+#customGenreInput {
+    display: none; 
+    margin-top: 10px;
+}
+
+/* Dropdown Styling */
+.form-select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+    background-color: white;
+    cursor: pointer;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.submit-btn:hover {
+    background-color: #1a5bb8;
+}
+
+/* Messages */
+.success-message {
+    color: green;
+    background-color: #e8f5e9;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    text-align: center;
+    border: 1px solid #c8e6c9;
+}
+
+.error-message {
+    color: #d32f2f;
+    background-color: #ffebee;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    text-align: center;
+    border: 1px solid #ffcdd2;
+}
+
+.divider {
+    border: 0;
+    height: 1px;
+    background: #ddd;
+    margin: 30px auto;
+    max-width: 800px;
+}
+
+/* Table Styles */
+.data-table {
+    width: 600px; 
+    max-width: 95%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    background-color: white;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    border-radius: 6px;
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+
+.data-table thead {
+    background-color: #4a90e2;
+    color: white;
+}
+
+.data-table th, .data-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+}
+
+.data-table th {
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.data-table th:hover {
+    background-color: #3a78c2;
+}
+
+.data-table tbody tr:hover {
+    background-color: #f1f7ff;
+}
+
+/* Sort Hint Text */
+.sort-hint {
+    font-size: 0.9em; 
+    color: #666; 
+    margin-bottom: 10px;
+}
+
+/* Return Link */
+.return-container {
+    margin-top: 20px;
+}
+
+.return-link {
+    display: inline-block;
+    padding: 8px 15px;
+    background-color: #666;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 0.9em;
+    transition: background-color 0.2s;
+}
+
+.return-link:hover {
+    background-color: #444;
+}
