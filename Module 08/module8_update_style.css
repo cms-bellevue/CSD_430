@@ -1,0 +1,186 @@
+/* Clint Scott
+CSD 430
+Module 8 Project Part 3
+11/30/2025
+
+Styles for module8 update pages.
+*/
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.5;
+    padding: 20px;
+    text-align: center;
+}
+
+h2 {
+    background-color: #e28e4a; /* Distinct Orange for Update Module */
+    color: white;
+    padding: 10px 15px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    display: inline-block;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+h3 { color: #e28e4a; margin: 20px 0 15px 0; }
+
+.form-container, .result-container {
+    background-color: white;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: left;
+    border-top: 5px solid #e28e4a;
+}
+
+.form-group { margin-bottom: 15px; }
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+/* Inputs */
+input[type="text"], .form-select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+/* Custom Input Field (Hidden by default) */
+.custom-input {
+    display: none; 
+    margin-top: 10px;
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Read-only ID field styling */
+.readonly-input {
+    background-color: #e9ecef;
+    color: #495057;
+    cursor: not-allowed;
+    font-weight: bold;
+}
+
+/* Button Group Styling */
+.button-group {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.cancel-btn {
+    background-color: #6c757d;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    flex: 1;
+    padding: 10px;
+    border-radius: 4px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
+
+.cancel-btn:hover {
+    background-color: #5a6268;
+}
+
+.submit-btn {
+    width: 100%; /* Default width */
+    padding: 10px;
+    background-color: #e28e4a;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+/* When used in group, share space */
+.update-btn {
+    flex: 1;
+}
+
+.submit-btn:hover { background-color: #c77633; }
+
+/* Disabled Button State */
+.disabled-btn {
+    background-color: #cccccc !important;
+    cursor: not-allowed !important;
+    opacity: 0.7;
+}
+
+/* Table Styles for Result */
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.data-table th {
+    background-color: #e28e4a;
+    color: white;
+    padding: 10px;
+    text-align: left;
+}
+
+.data-table td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Messages */
+.success-message {
+    color: green;
+    background-color: #e8f5e9;
+    padding: 10px;
+    border-radius: 4px;
+    text-align: center;
+    border: 1px solid #c8e6c9;
+}
+
+.error-message {
+    color: #d32f2f;
+    background-color: #ffebee;
+    padding: 10px;
+    border-radius: 4px;
+    text-align: center;
+    border: 1px solid #ffcdd2;
+}
+
+.return-container { margin-top: 20px; }
+
+.return-link {
+    display: inline-block;
+    padding: 8px 15px;
+    background-color: #666;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.return-link:hover { background-color: #444; }
+
+.instruction-text {
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 15px;
+}

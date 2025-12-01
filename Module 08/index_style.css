@@ -1,0 +1,240 @@
+/* Clint Scott
+CSD 430
+Module 8 - Project Part 3
+11/30/2025
+
+Styles for index page.
+*/
+
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Layout Container */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Main Header styling (H1) */
+h1 {
+    background-color: #4a90e2;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    font-size: 1.8em;
+    display: inline-block;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/* Intro Paragraph */
+.intro-text {
+    margin-bottom: 30px;
+    color: #555;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* COMPACT CRUD Banner Styles */
+.crud-banner {
+    background-color: white;
+    padding: 15px 20px;
+    border-radius: 6px;
+    border: 1px solid #eee;
+    margin-bottom: 25px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.crud-banner p {
+    font-size: 1em;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.crud-grid {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.crud-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 12px;
+    border-radius: 4px;
+    color: white;
+    cursor: default;
+    opacity: 0.9;
+}
+
+.crud-item .icon {
+    font-size: 1.1em;
+    margin-right: 6px;
+    margin-bottom: 0;
+}
+
+/* Base style for the rest of the word */
+.crud-item .label {
+    font-size: 0.75em;
+    font-weight: 600;
+    opacity: 0.9;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    display: inline-block;
+}
+
+/* Emphasis style for the first letter (C, R, U, D) */
+.crud-item .first-letter {
+    font-size: 1.4em;
+    font-weight: 900;
+    opacity: 1;
+}
+
+/* Specific Colors for CRUD actions */
+.crud-item.create { background-color: #28a745; }
+.crud-item.read   { background-color: #4a90e2; }
+.crud-item.update { background-color: #fd7e14; }
+.crud-item.delete { background-color: #dc3545; }
+
+hr {
+    border: 0;
+    height: 1px;
+    background: #ddd;
+    margin: 20px 0 30px 0;
+}
+
+/* Module Section Cards */
+.module-section {
+    background-color: white;
+    max-width: 600px;
+    margin: 0 auto 25px auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    text-align: left;
+    border-left: 5px solid #4a90e2;
+}
+
+/* Section Headers */
+.module-section h3 {
+    color: #333;
+    margin-bottom: 5px;
+    font-size: 1.3em;
+    font-weight: 700;
+}
+
+/* Section Descriptions */
+.module-section p {
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* Link list styling */
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* List Items as Buttons */
+ul li {
+    margin-bottom: 12px;
+    border-radius: 5px;
+    transition: all 0.2s ease;
+    border: 1px solid #4a90e2;
+    background-color: white;
+    overflow: hidden;
+}
+
+ul li:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(74, 144, 226, 0.2);
+    background-color: #f0f7ff;
+}
+
+/* Link Styling */
+ul li a {
+    text-decoration: none;
+    color: #4a90e2;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 15px;
+}
+
+/* Hover Arrow Effect */
+ul li a::after {
+    content: "➔";
+    font-size: 1.2em;
+    opacity: 0;
+    transition: opacity 0.2s, transform 0.2s;
+    transform: translateX(-10px);
+}
+
+ul li:hover a::after {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+ul li a:hover {
+    color: #1a5bb8;
+}
+
+/* Footer styling */
+footer {
+    margin-top: 40px;
+    font-size: 0.85em;
+    color: #888;
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 1.4em;
+        padding: 10px 15px;
+        width: 100%;
+    }
+    
+    .crud-grid {
+        gap: 10px;
+    }
+    
+    .crud-item {
+        width: 45%; 
+    }
+
+    .module-section {
+        padding: 15px;
+    }
+
+    ul li a {
+        padding: 10px 12px;
+    }
+}
