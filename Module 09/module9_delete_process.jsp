@@ -11,9 +11,11 @@ Module 9 - Project Part 4
 
 This JSP processes the Soft Delete, Restore, and Hard Delete logic 
 and redirects the user with a confirmation message.
+It includes validation to prevent restoring duplicates.
 --%>
 
 <%
+    request.setCharacterEncoding("UTF-8");
     String redirectPage = "module9_delete_select.jsp";
     String message = "";
     String msgClass = "";
@@ -33,7 +35,6 @@ and redirects the user with a confirmation message.
     try {
         MovieDAO dao = new MovieDAO();
         boolean actionSuccess = false;
-
         if (!action.equals("HARD_DELETE_ALL") && !action.equals("RESTORE_ALL")) {
             movieId = Integer.parseInt(idParam);
         }
@@ -52,13 +53,24 @@ and redirects the user with a confirmation message.
                 break;
 
             case "RESTORE":
-                actionSuccess = dao.restoreMovie(movieId);
-                if (actionSuccess) {
-                    message = "Success! Record ID " + movieId + " has been restored to Active Records.";
-                    msgClass = "success-message";
-                } else {
-                    message = "Error: Restore failed. Record may not exist or was already active.";
+                // 1. Get the title of the movie we are trying to restore
+                String titleToRestore = dao.getMovieTitleById(movieId);
+                
+                // 2. Check if this title is already active
+                if (dao.isTitleActive(titleToRestore)) {
+                    message = "Error: A movie with the title '" + titleToRestore + "' is already active in the list.";
                     msgClass = "error-message";
+                    actionSuccess = false; 
+                } else {
+                    // 3. Safe to restore
+                    actionSuccess = dao.restoreMovie(movieId);
+                    if (actionSuccess) {
+                        message = "Success! Record ID " + movieId + " has been restored to Active Records.";
+                        msgClass = "success-message";
+                    } else {
+                        message = "Error: Restore failed. Record may not exist or was already active.";
+                        msgClass = "error-message";
+                    }
                 }
                 redirectPage = "module9_recycle_bin.jsp";
                 break;

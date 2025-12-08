@@ -10,7 +10,6 @@ This application is a CRUD (Create, Read, Update, Delete) management system
 architected using Java Server Pages (JSP), JDBC, and JavaBeans. The system 
 interfaces with a MySQL backend (`clint_movies_data`) to provide persistent 
 storage for a movie library.
-
 Architecture: MVC (Model-View-Controller) pattern utilizing DAOs for data 
 abstraction and Beans for data transfer objects (DTOs).
 
@@ -32,16 +31,19 @@ Key Features & Implementation Details:
    - DAO logic (`getAllMoviesSortedByTitle()`) was added to manage sorting 
      conflicts, ensuring the Create page (`id DESC`) and Delete page (`title 
      ASC`) maintain correct default order.
+   - Added validation logic (`isTitleActive`) to prevent restoring a movie if 
+     an active movie with the same title already exists.
 
 2. Delete Selection View (module9_delete_select.jsp)
-   - Layout: Redesigned into a responsive 2-column grid. The "Active Records 
+   - Layout: Designed as a responsive 2-column grid. The "Active Records 
      List" is displayed side-by-side with the "Soft Delete Form".
    - UX: Includes sortable tables with clickable header hover effects for 
      better usability.
    - Navigation: Provides direct access to the Recycle Bin.
+   - Fix: Ensured empty table state preserves table headers (`thead`).
 
 3. Recycle Bin View (module9_recycle_bin.jsp)
-   - Layout: Redesigned into a responsive 2-column grid separating Restore 
+   - Layout: Designed as a responsive 2-column grid separating Restore 
      actions (Left Column) from Destructive actions (Right Column).
    - Restore All: Added functionality to batch restore all soft-deleted items.
    - Hard Delete All: Added "Empty Recycle Bin" functionality to permanently 
@@ -56,12 +58,13 @@ Key Features & Implementation Details:
      `HARD_DELETE_ALL`.
    - Validates requests and redirects to the appropriate view (Select vs. Bin) 
      based on the action performed.
+   - Intercepts Restore requests to enforce duplicate prevention logic.
 
 5. Application Dashboard (index.jsp)
    - Layout Optimization: The main menu was reorganized into a compact, 
      responsive 2x2 grid to display all CRUD operations (Create, Read, Update, 
      Delete) simultaneously without scrolling.
-
+	 
 ================================================================================
 VERSION HISTORY & COMPONENTS
 ================================================================================

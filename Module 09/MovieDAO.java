@@ -245,6 +245,52 @@ public class MovieDAO {
         }
         return movie;
     }
+    
+    /**
+     * Retrieves the title of a movie by its ID, regardless of its deleted status.
+     * Used for duplicate validation before restoring.
+     * @param id The ID of the movie.
+     * @return The title of the movie, or "Unknown" if not found.
+     */
+    public String getMovieTitleById(int id) throws SQLException {
+        String title = "Unknown";
+        String query = "SELECT title FROM " + TABLE_NAME + " WHERE id = ?";
+        
+        try (Connection conn = DriverManager.getConnection(url, username, getPassword());
+             PreparedStatement ps = conn.prepareStatement(query)) {
+            
+            ps.setInt(1, id);
+            try (ResultSet rs = ps.executeQuery()) {
+                if (rs.next()) {
+                    title = rs.getString("title");
+                }
+            }
+        }
+        return title;
+    }
+
+    /**
+     * Checks if a movie title currently exists in the ACTIVE records (is_deleted = 0).
+     * Used to prevent duplicates during restoration.
+     * @param title The title to check.
+     * @return true if the title is already active, false otherwise.
+     */
+    public boolean isTitleActive(String title) throws SQLException {
+        boolean isActive = false;
+        String query = "SELECT COUNT(*) FROM " + TABLE_NAME + " WHERE title = ? AND is_deleted = 0";
+        
+        try (Connection conn = DriverManager.getConnection(url, username, getPassword());
+             PreparedStatement ps = conn.prepareStatement(query)) {
+            
+            ps.setString(1, title);
+            try (ResultSet rs = ps.executeQuery()) {
+                if (rs.next()) {
+                    isActive = rs.getInt(1) > 0;
+                }
+            }
+        }
+        return isActive;
+    }
 
     // -------------------------------------------------------------------------
     // WRITE OPERATIONS
