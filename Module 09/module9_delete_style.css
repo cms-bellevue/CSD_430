@@ -1,0 +1,305 @@
+/* Clint Scott
+CSD 430
+Module 9 Project Part 4
+12/07/2025
+
+Styles specific to module9 delete, recycle bin, and process pages.
+*/
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.5;
+    padding: 20px;
+    text-align: center;
+}
+
+h2 {
+    background-color: #dc3545; 
+    color: white;
+    padding: 10px 15px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    display: inline-block;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+h3 { 
+    color: #dc3545; 
+    margin: 20px 0 15px 0; 
+}
+
+.restore-header {
+    color: #28a745 !important; 
+}
+
+.form-container, .result-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: left;
+    border-top: 5px solid #dc3545; 
+}
+
+.delete-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+}
+
+.delete-grid > div:first-child {
+    padding-right: 25px; 
+    border-right: 1px solid #ddd; 
+}
+
+@media (max-width: 899px) {
+    .delete-grid > div:first-child {
+        border-right: none;
+        padding-right: 0;
+    }
+}
+
+@media (min-width: 900px) {
+    .delete-grid {
+        grid-template-columns: 2fr 1fr; 
+    }
+}
+
+.recycle-grid {
+    display: grid;
+    grid-template-columns: 1fr; 
+    gap: 30px;
+}
+
+@media (min-width: 768px) {
+    .recycle-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .recycle-grid > div:first-child {
+        padding-right: 25px; 
+        border-right: 1px solid #ddd;
+    }
+}
+
+@media (max-width: 767px) {
+    .recycle-grid > div:first-child {
+        border-right: none;
+        padding-right: 0;
+    }
+}
+
+.form-group { margin-bottom: 15px; }
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+input[type="text"], .form-select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+.delete-link-heading {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #4a90e2; 
+    margin-bottom: 5px;
+    margin-top: 15px;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.data-table th {
+    background-color: #dc3545; 
+    color: white;
+    padding: 10px;
+    text-align: left;
+    cursor: pointer;
+    transition: background-color 0.2s; 
+}
+
+.data-table th:hover {
+    background-color: #c82333; 
+}
+
+.data-table td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.submit-btn {
+    width: 100%; 
+    padding: 10px;
+    background-color: #dc3545; 
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-top: 10px;
+}
+
+.submit-btn:hover { 
+    background-color: #c82333; 
+}
+
+.submit-btn:disabled, .submit-btn.disabled-btn {
+    background-color: #cccccc !important;
+    cursor: not-allowed !important;
+    opacity: 0.7;
+}
+
+.restore-btn {
+    background-color: #28a745; 
+    display: block; 
+}
+.restore-btn:hover {
+    background-color: #218838;
+}
+
+.hard-delete-btn.individual {
+    background-color: #fd7e14; 
+}
+
+.hard-delete-btn.individual:hover {
+    background-color: #e36800; 
+}
+
+.hard-delete-btn {
+    background-color: #dc3545; 
+    display: block;
+}
+
+.recycle-bin-link {
+    background-color: #007bff; 
+    display: block; 
+    padding: 8px; 
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 1em;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.recycle-bin-link:hover {
+    background-color: #0056b3;
+}
+
+.success-message {
+    color: green;
+    background-color: #e8f5e9;
+    padding: 10px;
+    border-radius: 4px;
+    text-align: center;
+    border: 1px solid #c8e6c9;
+}
+
+.error-message {
+    color: #d32f2f;
+    background-color: #ffebee;
+    padding: 10px;
+    border-radius: 4px;
+    text-align: center;
+    border: 1px solid #ffcdd2;
+}
+
+.permanent-warning {
+    color: #d32f2f; 
+    background-color: #ffebee;
+    padding: 12px;
+    border-radius: 4px;
+    border: 2px solid #ffcdd2;
+    text-align: center;
+    font-weight: bold;
+    margin: 10px 0;    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.permanent-warning::before {
+    content: "⚠️";
+    font-size: 1.4em;
+    margin-right: 10px;
+    line-height: 1;
+}
+
+.instruction-text {
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.return-container { 
+    margin-top: 20px; 
+    text-align: center;
+}
+
+.return-link {
+    background-color: #6c757d;
+    display: inline-block;
+    padding: 8px 15px;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    margin: 5px;
+}
+
+.return-link:hover { 
+    background-color: #5a6268; 
+}
+
+/* Utilities extracted from inline styles */
+.margin-bottom-20 {
+    margin-bottom: 20px;
+}
+
+.separator-sm {
+    margin: 20px 0;
+}
+
+.separator-md {
+    margin: 30px 0 15px 0;
+}
+
+.separator-lg {
+    margin: 30px 0 20px 0;
+}
+
+.text-align-left {
+    text-align: left;
+}
+
+.btn-blue {
+    background-color: #007bff;
+}
+
+.btn-blue:hover {
+    background-color: #0056b3;
+}
+
+.margin-left-10 {
+    margin-left: 10px;
+}
